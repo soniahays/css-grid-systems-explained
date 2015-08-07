@@ -1,4 +1,8 @@
 # css-grid-systems-explained
+## The project
+Break down in a visually appealing way the basic principles of a
+CSS grid systems. Used Google material design as an inspiration 
+for the UI.
 
 ## Before you begin
 
