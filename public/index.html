@@ -3,15 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Grid systems explained</title>
+    <!--//change repository name for CSS grids made simple-->
+    <title>CSS grids made simple</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="scss/app.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-    <div class="container">
+<!--When we combine all the concepts and CSS, we can write HTML layout scaffolding like so:-->
+    <div class="row">
+        <div class="centered" style="width: 269px; margin: -134px 0 0 -134px;">
+            <div class="btn-circle">
+                <div class="material-icon plus">
+                    <span class="first"></span>
+                    <span class="second"></span>
+                    <span class="third"></span>
+                </div>
+            </div>
+            <div class="card-panel" style="display:none;">
+                <p>
+                    A grid system is a structure that allows for content
+                    to be stacked both vertically and horizontally in a consistent and
+                    easily manageable fashion.
+                </p>
+            </div>
+        </div>
+        <div class="column column-4" style="background-color: yellow;"></div>
+        <div class="column column-4" style="background-color: yellowgreen;"></div>
+        <div class="column column-4" style="background-color: greenyellow;"></div>
     </div>
+
+    <!--<div class="row" style="background-color: deeppink;">-->
+        <!--<div class="column column-12 card-panel">-->
+                <!--Grid systems include two key components: rows-->
+                <!--<div class="row">-->
+                    <!--<div class="column column-3 card-panel">-->
+                        <!--columns.-->
+                    <!--</div>-->
+                    <!--<div class="column column-3 card-panel">-->
+                        <!--columns.-->
+                    <!--</div>-->
+                    <!--<div class="column column-3 card-panel">-->
+                        <!--columns.-->
+                    <!--</div>-->
+                    <!--<div class="column column-3 card-panel">-->
+                        <!--columns.-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--Rows are used to accommodate the columns.-->
+        <!--</div>-->
+        <!--<div class="column column-12 card-panel" style="background-color: hotpink;">-->
+            <!--<p>-->
+                <!--Columns make up the final structure and contain the actual content.-->
+            <!--</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row" style="background-color: teal;">-->
+        <!--<div class="column column-4" style="background-color: lightpink;">-->
+            <!--It’s important to understand that by going with a maximum of 12 columns per row,-->
+            <!--you need to fulfill that amount for every row regardless of how many columns you-->
+            <!--want. For example, if you wanted only a row of 3 equal columns, you would use 3-->
+            <!--elements that each span 4 columns (4×3=12). Exceeding the sum of 12 will result-->
+            <!--in the extra column(s) wrapping to a new line.-->
+        <!--</div>-->
+        <!--<div class="column column-4" style="background-color: purple;"></div>-->
+        <!--<div class="column column-2"style="background-color: mediumorchid;"></div>-->
+    <!--</div>-->
+    <!--<div class="container">-->
+        <!--<p> Some grid systems will additionally include containers, which serve-->
+            <!--as wrappers for the layout.-->
+        <!--</p>-->
+    <!--</div>-->
 </body>
 </html>
 

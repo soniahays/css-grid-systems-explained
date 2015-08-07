@@ -3,7 +3,6 @@
 var express = require('express'),
 	_ = require('underscore'),
 	sassMiddleware = require('node-sass-middleware'),
-	path = require('path'),
 	app = express(),
 	bodyParser = require('body-parser'),
 	errorHandler = require('errorhandler'),
@@ -14,16 +13,7 @@ var express = require('express'),
 	destPath = publicDir + '/generated_css/css';
 
 app.get('/', function(req, res) {
-	res.redirect("/index.html");
-});
-
-app.get('/contacts', function(req, res) {
-	res.json(contacts.contacts);
-});
-
-app.get('/contact/:id', function(req, res) {
-	console.log(contacts.contacts);
-	res.json(_.findWhere(contacts.contacts, {id: parseInt(req.params.id)}));
+	res.redirect('/index.html');
 });
 
 app.use(methodOverride());

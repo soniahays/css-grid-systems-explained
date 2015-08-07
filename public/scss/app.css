@@ -1,3 +1,179 @@
+/*First and foremost, it is important for any grid system to reset the box model.*/
+/*By default, the browser does not include the padding and border within the*/
+/*declared width and height of an element. This does not bode well for*/
+/*responsiveness. Thankfully, this can be fixed by setting the box-sizing*/
+/*property to border-box for both rows and columns.*/
+.row,
+.column {
+  box-sizing: border-box; }
 
+.row:before,
+.row:after {
+  content: " ";
+  display: table; }
+
+.row:after {
+  clear: both; }
+
+.column {
+  position: relative;
+  float: left; }
+
+.column + .column {
+  margin-left: 1.6%; }
+
+.column-1 {
+  width: 6.86666666667%; }
+
+.column-2 {
+  width: 15.3333333333%; }
+
+.column-3 {
+  width: 23.8%; }
+
+.column-4 {
+  width: 32.2666666667%; }
+
+.column-5 {
+  width: 40.7333333333%; }
+
+.column-6 {
+  width: 49.2%; }
+
+.column-7 {
+  width: 57.6666666667%; }
+
+.column-8 {
+  width: 66.1333333333%; }
+
+.column-9 {
+  width: 74.6%; }
+
+.column-10 {
+  width: 83.0666666667%; }
+
+.column-11 {
+  width: 91.5333333333%; }
+
+.column-12 {
+  width: 100%; }
+
+@media only screen and (max-width: 550px) {
+  .column-1,
+  .column-2,
+  .column-3,
+  .column-4,
+  .column-5,
+  .column-6,
+  .column-7,
+  .column-8,
+  .column-9,
+  .column-10,
+  .column-11,
+  .column-12 {
+    width: auto;
+    float: none; }
+
+  .column + .column {
+    margin-left: 0; } }
+/*Google Material style*/
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #00a896; }
+
+p {
+  color: rgba(0, 0, 0, 0.71);
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
+
+.card-panel {
+  transition: box-shadow .25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+
+.centered {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -65px 0 0 -200px; }
+
+.btn-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  width: 269px;
+  height: 269px;
+  background-color: #fcb447;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform: translate3d(0, 0, 12px);
+  -moz-transform: translate3d(0, 0, 12px);
+  -ms-transform: translate3d(0, 0, 12px);
+  -o-transform: translate3d(0, 0, 12px);
+  transform: translate3d(0, 0, 12px);
+  box-shadow: 14.4px 18px 6px rgba(0, 0, 0, 0.1), 14.4px 15.6px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.5s, box-shadow 0.5s;
+  -moz-transition: -moz-transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  cursor: pointer; }
+
+.material-icon {
+  background-color: #fcb447;
+  width: 80px;
+  height: 80px;
+  margin: calc(50% - 40px);
+  position: absolute;
+  -webkit-transform: translate3d(0, 0, 12px);
+  -moz-transform: translate3d(0, 0, 12px);
+  -ms-transform: translate3d(0, 0, 12px);
+  -o-transform: translate3d(0, 0, 12px);
+  transform: translate3d(0, 0, 12px); }
+
+.material-icon span,
+.material-icon {
+  transition: all 500ms ease; }
+
+.material-icon span {
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.plus span {
+  height: 10px;
+  -webkit-transform: translateY(29px); }
+
+.plus .second {
+  -webkit-transform: rotate(90deg) translateY(0) translateX(35px); }
+
+/* This part is added to the hamburger css so they have the same height and positioning. */
+.plus span,
+.arrow span {
+  height: 10px;
+  -webkit-transform: translateY(35px); }
+
+/* I also need to move it back a bit to keep it centered. */
+.arrow {
+  -webkit-transform: rotate(180deg) translateX(-3px); }
+
+.arrow .second,
+.arrow .third {
+  -webkit-transform: rotate(45deg) translateY(40px) translateX(26px);
+  width: 40px; }
+
+.arrow .second {
+  -webkit-transform: rotate(-45deg) translateY(10px) translateX(-24px); }
 
 /*# sourceMappingURL=app.css.map */
