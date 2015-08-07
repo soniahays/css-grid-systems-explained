@@ -226,21 +226,25 @@ $button-big-size: 269px;
 .btn-circle {
   position: absolute;
   border-radius: 50%;
-  z-index: 1;
-
   width: $button-big-size;
   height: $button-big-size;
+  z-index: 1;
+
   background-color: #fcb447;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 14.4px 18px 6px rgba(0, 0, 0, 0.1), 14.4px 15.6px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+  cursor: pointer;
+}
+
+.intro {
   -webkit-transform: translate3d(0, 0, 12px);
   -moz-transform: translate3d(0, 0, 12px);
   -ms-transform: translate3d(0, 0, 12px);
   -o-transform: translate3d(0, 0, 12px);
   transform: translate3d(0, 0, 12px);
-  box-shadow: 14.4px 18px 6px rgba(0, 0, 0, 0.1), 14.4px 15.6px 6px rgba(0, 0, 0, 0.1);
+
   -webkit-transition: -webkit-transform 0.5s, box-shadow 0.5s;
   -moz-transition: -moz-transform 0.5s, box-shadow 0.5s;
   transition: transform 0.5s, box-shadow 0.5s;
@@ -249,7 +253,20 @@ $button-big-size: 269px;
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  cursor: pointer;
+
+  &:hover {
+    -webkit-transform: translate3d(0, 0, 18px);
+    -moz-transform: translate3d(0, 0, 18px);
+    -ms-transform: translate3d(0, 0, 18px);
+    -o-transform: translate3d(0, 0, 18px);
+    transform: translate3d(0, 0, 18px);
+    box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.next {
+    -webkit-transform: translate3d(89px, 89px, 89px) scale(.4);
+    box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1);
 }
 
 .material-icon {
