@@ -101,6 +101,9 @@ p {
   top: 50%;
   margin: -65px 0 0 -200px; }
 
+.hidden {
+  display: none; }
+
 .btn-circle {
   position: absolute;
   border-radius: 50%;
@@ -108,6 +111,8 @@ p {
   height: 269px;
   z-index: 1;
   background-color: #fcb447;
+  border-bottom: 1px solid #c7c7c7;
+  border-right: 1px solid #c7c7c7;
   box-shadow: 14.4px 18px 6px rgba(0, 0, 0, 0.1), 14.4px 15.6px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
   -webkit-tap-highlight-color: transparent;
@@ -136,8 +141,14 @@ p {
     box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1); }
 
 .next {
-  -webkit-transform: translate3d(89px, 89px, 89px) scale(0.4);
-  box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1); }
+  -webkit-transform: translate3d(89px, 89px, 12px) scale(0.4); }
+  .next:hover {
+    -webkit-transform: translate3d(89px, 89px, 18px) scale(0.4);
+    -moz-transform: translate3d(89px, 89px, 18px) scale(0.4);
+    -ms-transform: translate3d(89px, 89px, 18px) scale(0.4);
+    -o-transform: translate3d(89px, 89px, 18px) scale(0.4);
+    transform: translate3d(89px, 89px, 18px) scale(0.4);
+    box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1); }
 
 .material-icon {
   background-color: #fcb447;

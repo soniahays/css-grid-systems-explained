@@ -5,5 +5,6 @@ $(document).ready(function() {
         event.preventDefault();
         $('.plus').removeClass('plus').addClass('arrow');
         $('.intro').removeClass('intro').addClass('next');
+        $('.card-panel.hidden').removeClass('hidden');
     });
 });
