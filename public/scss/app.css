@@ -199,4 +199,9 @@ p {
 .arrow .second {
   -webkit-transform: rotate(-45deg) translateY(10px) translateX(-24px); }
 
+.intro-grid .row {
+  background-color: #4DB6AC; }
+.intro-grid .column {
+  background-color: #80CBC4; }
+
 /*# sourceMappingURL=app.css.map */

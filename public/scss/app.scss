@@ -347,3 +347,14 @@ $button-big-size: 269px;
 .arrow .second {
   -webkit-transform: rotate(-45deg) translateY(10px) translateX(-24px);
 }
+
+.intro-grid {
+  //TEAL swatch 100 -> #B2DFDB
+  .row {
+      background-color: #4DB6AC; // TEAL swatch 300
+  }
+
+  .column {
+    background-color: #80CBC4; //TEAL swatch 200
+  }
+}
