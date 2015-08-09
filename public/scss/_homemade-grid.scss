@@ -1,0 +1,185 @@
+//***Resetting the Box Model
+/*First and foremost, it is important for any grid system to reset the box model.*/
+/*By default, the browser does not include the padding and border within the*/
+/*declared width and height of an element. This does not bode well for*/
+/*responsiveness. Thankfully, this can be fixed by setting the box-sizing*/
+/*property to border-box for both rows and columns.*/
+
+//Mainly to be able to use percentages
+.row,
+.column {
+  box-sizing: border-box;
+}
+
+
+//***Clearing Floats
+//In order to align the columns horizontally, grid systems will float the columns.
+// This means you need to clear the floating elements on the row to maintain the
+//structure of the layout. This is where a clearfix comes in:
+
+//By applying the clearfix to the row in your CSS, it will cause the row to stretch
+//to accommodate the columns it contains without adding to the markup.
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+//***Defining Columns
+
+//For columns, the styles need to be defined in 2 parts: the common
+//styles and the widths. First the common:
+//Here, the column is given a relative position to allow any absolutely
+//position content within the column to be positioned relative to that
+//column. The column is then floated left for horizontal alignment,
+//which will cause the element to become display: block even if it
+//did not start out that way.
+.column {
+  position: relative;
+  float: left;
+}
+
+//***Creating Gutters
+
+//Gutters help to create separation between columns for greater legibility
+//and aesthetics. There are 2 schools of thought when approaching gutters;
+//defining paddings within each column or using a percentage-based left
+//margin for each column.
+
+//using a percentage-based left margin for each column.
+//facilitates responsive gutters that will remain relative
+// to the columns and the viewport as a whole with
+// different screen sizes.
+//also lets you define additional paddings for columns
+// for further flexibility.
+
+.column + .column {
+  margin-left: 1.6%;
+}
+
+//biggest advantage of padding-based gutters is in how
+// they simplify calculations for column widths, which
+// will become evident in the next section.
+
+//***Calculating Column Widths
+
+//Before we can begin making calculations, we need to determine
+//the maximum amount of columns per row. A popular choice is 12
+//as it boasts flexibility given that it is divisible by 1, 2,
+//3, 4, and 6.
+
+//allows a variety of different combinations that still allow
+// for evenly distributed columns of the same size.
+
+//Now that we know the maximum number of columns,
+//next we need to determine the width of a single (1/12)
+//column using the following formula:
+// - scw = (100 – (m * (mc – 1))) / mc
+//Where:
+// - scw = single column width
+// - m = margin (1.6%)
+// - mc = maximum columns (12)
+//Result single column width of 6.86666666667%.
+//Then calculate the rest of the column widths
+//- cw = (scw * cs) + (m * (cs – 1))
+//Where:
+//- cw = column width
+//- scw = single column width (6.86666666667%)
+//- cs = column span (1-12)
+//- m = margin (1.6%)
+
+
+//Applying this formula for each of the 12 columns
+.column-1 {
+  width: 6.86666666667%;
+}
+
+.column-2 {
+  width: 15.3333333333%;
+}
+
+.column-3 {
+  width: 23.8%;
+}
+
+.column-4 {
+  width: 32.2666666667%;
+}
+
+.column-5 {
+  width: 40.7333333333%;
+}
+
+.column-6 {
+  width: 49.2%;
+}
+
+.column-7 {
+  width: 57.6666666667%;
+}
+
+.column-8 {
+  width: 66.1333333333%;
+}
+
+.column-9 {
+  width: 74.6%;
+}
+
+.column-10 {
+  width: 83.0666666667%;
+}
+
+.column-11 {
+  width: 91.5333333333%;
+}
+
+.column-12 {
+  width: 100%;
+}
+
+//Despite the fact that the grid system is responsive, it can only
+//go so far. For devices with small viewports, such as smartphones,
+//the width of the columns need to be adjusted to allow the content
+//they contain to still appear legible and visually appealing.
+//Media queries help with this:
+
+//Here, we are telling the grid to allow every column to take up the
+//full width of its container for devices with a viewport smaller than
+//550px pixels wide. Since gutters are no longer necessary here,
+//we remove those too.
+@media only screen and (max-width: 550px) {
+  .column-1,
+  .column-2,
+  .column-3,
+  .column-4,
+  .column-5,
+  .column-6,
+  .column-7,
+  .column-8,
+  .column-9,
+  .column-10,
+  .column-11,
+  .column-12 {
+    width: auto;
+    float: none;
+  }
+
+  .column + .column {
+    margin-left: 0;
+  }
+}
+
+
+//you could opt for a mobile first strategy that takes the opposite approach,
+//scaling upwards to a 12-column layout. In such a case, columns start as
+//full-width, then we establish the column widths and floats to allow them
+//to align horizontally as the screen resolution reaches a specified threshold.
+// This is the preferred approach for Bootstrap’s grid system, which doesn’t
+//institute the column widths until the viewport reaches a minimum width
+//of 992 pixels.

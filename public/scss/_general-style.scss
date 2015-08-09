@@ -1,0 +1,199 @@
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+/* Fonts
+   ========================================================================== */
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  background-color: #00a896;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.71);
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Panels
+   ========================================================================== */
+.card-panel {
+  transition: box-shadow .25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Buttons
+   ========================================================================== */
+$button-big-size: 269px;
+
+.btn-circle {
+  position: absolute;
+  border-radius: 50%;
+  width: $button-big-size;
+  height: $button-big-size;
+  z-index: 1;
+
+  background-color: #fcb447;
+  //double check color borders in material design.
+  border-bottom: 1px solid #c7c7c7;
+  border-right: 1px solid #c7c7c7;
+  box-shadow: 14.4px 18px 6px rgba(0, 0, 0, 0.1), 14.4px 15.6px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  cursor: pointer;
+}
+
+/* btn-circle states */
+
+/* Intro */
+.intro {
+  -webkit-transform: translate3d(0, 0, 12px);
+  -moz-transform: translate3d(0, 0, 12px);
+  -ms-transform: translate3d(0, 0, 12px);
+  -o-transform: translate3d(0, 0, 12px);
+  transform: translate3d(0, 0, 12px);
+
+  -webkit-transition: -webkit-transform 0.5s, box-shadow 0.5s;
+  -moz-transition: -moz-transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  &:hover {
+    -webkit-transform: translate3d(0, 0, 18px);
+    -moz-transform: translate3d(0, 0, 18px);
+    -ms-transform: translate3d(0, 0, 18px);
+    -o-transform: translate3d(0, 0, 18px);
+    transform: translate3d(0, 0, 18px);
+    box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Next */
+.next {
+  -webkit-transform: translate3d(89px, 89px, 12px) scale(.4);
+
+  //refactor
+  &:hover {
+    -webkit-transform: translate3d(89px, 89px, 18px) scale(.4);
+    -moz-transform: translate3d(89px, 89px, 18px) scale(.4);
+    -ms-transform: translate3d(89px, 89px, 18px) scale(.4);
+    -o-transform: translate3d(89px, 89px, 18px) scale(.4);
+    transform: translate3d(89px, 89px, 18px) scale(.4);
+    box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* Morphing icon */
+.material-icon {
+  background-color: #fcb447;
+  width: 80px;
+  height: $icon-height;
+  margin: calc(50% - 40px);
+  position: absolute;
+
+  -webkit-transform: translate3d(0, 0, 12px);
+  -moz-transform: translate3d(0, 0, 12px);
+  -ms-transform: translate3d(0, 0, 12px);
+  -o-transform: translate3d(0, 0, 12px);
+  transform: translate3d(0, 0, 12px);
+
+  span {
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.material-icon span,
+.material-icon {
+  transition: all 500ms ease;
+}
+
+/* Plus icon */
+.plus {
+  span {
+    height: $icon-boldness;
+    -webkit-transform: translateY(29px);
+  }
+
+  .second {
+    -webkit-transform: rotate(90deg) translateY(0) translateX(($icon-height/2)-$icon-boldness/2);;
+  }
+}
+
+
+/* This part is added to the plus css so they have the same height and positioning. */
+.plus span,
+.arrow span {
+  height: $icon-boldness;
+  -webkit-transform: translateY(($icon-height/2)-$icon-boldness/2);
+}
+
+/* Arrow icon */
+.arrow {
+  -webkit-transform: rotate(180deg) translateX(-3px);
+
+  //TODO: Needs to be adjusted
+  .second,
+  .third {
+    -webkit-transform: rotate(45deg) translateY(40px) translateX(26px);
+    width: 40px;
+  }
+
+  .second {
+    -webkit-transform: rotate(-45deg) translateY(10px) translateX(-24px);
+  }
+}
+
+
+/* ==========================================================================
+   Decorative grid
+   ========================================================================== */
+
+.intro-grid {
+  //TEAL swatch 100 -> #B2DFDB
+  .row {
+    background-color: #4DB6AC; // TEAL swatch 300
+  }
+
+  .column {
+    background-color: #80CBC4; //TEAL swatch 200
+  }
+
+  //  pulse, zoomin, fadein entrance?
+  transform-origin: center top;
+  transform: scale3d(.8, .8, 1);
+
+  animation: pulse 500ms 1;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(.8, .8, 1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale3d(.82, .82, 1.02);
+  }
+
+  100% {
+    transform: scale3d(.8, .8, 1);
+    opacity: 100;
+  }
+}
