@@ -8,12 +8,21 @@
   top: 50%;
   margin: -65px 0 0 -200px; }
 
-.hidden {
+.not-displayed {
   display: none; }
+
+.hidden {
+  visibility: hidden; }
 
 /* ==========================================================================
    Variables
    ========================================================================== */
+/* Palette
+   ======================================= */
+/**
+* generated with https://www.materialpalette.com/
+* TEAL + ORANGE.
+**/
 /* Fonts
    ======================================= */
 /* ==========================================================================
@@ -97,40 +106,22 @@
 
   .column + .column {
     margin-left: 0; } }
-/*-- Display animation -------------------------------- */
-.display-animation > * {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0); }
-
-.display-animation > .animated {
-  -webkit-animation: display 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
-  -o-animation: display 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
-  animation: display 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards; }
-
-.no-js .display-animation > * {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1); }
-
-@keyframes display {
+@keyframes popUp {
   from {
     -webkit-transform: scale(0); }
   to {
     -webkit-transform: scale(1); } }
-@-o-keyframes display {
+@-o-keyframes popUp {
   from {
     -webkit-transform: scale(0); }
   to {
     -webkit-transform: scale(1); } }
-@-ms-keyframes display {
+@-ms-keyframes popUp {
   from {
     -webkit-transform: scale(0); }
   to {
     -webkit-transform: scale(1); } }
-@-moz-keyframes display {
+@-moz-keyframes popUp {
   from {
     -webkit-transform: scale(0); }
   to {
@@ -140,20 +131,49 @@
     -webkit-transform: scale(0); }
   to {
     -webkit-transform: scale(1); } }
+.popUp {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation: popUp 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  -o-animation: popUp 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+  animation: popUp 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards; }
+
 /* ==========================================================================
    General styles
    ========================================================================== */
 /* Fonts
    ========================================================================== */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  background-color: #00a896; }
+  margin: 0; }
 
 p {
   color: rgba(0, 0, 0, 0.71);
   padding: 0;
   -webkit-font-smoothing: antialiased; }
+
+/* Structure
+   ========================================================================== */
+header {
+  padding-top: 85px;
+  padding-bottom: 55px;
+  background-color: #009688;
+  min-height: 280px; }
+  header .site-branding {
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto; }
+  header h1 {
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 4em;
+    line-height: 20px; }
+  header h5 {
+    color: #B2DFDB;
+    font-size: 1.5em; }
 
 /* Panels
    ========================================================================== */
@@ -206,9 +226,9 @@ p {
     box-shadow: 21.6px 27px 9px rgba(0, 0, 0, 0.1), 21.6px 23.4px 9px rgba(0, 0, 0, 0.1); }
 
 /* Next */
-.next {
+#next {
   -webkit-transform: translate3d(89px, 89px, 12px) scale(0.4); }
-  .next:hover {
+  #next:hover {
     -webkit-transform: translate3d(89px, 89px, 18px) scale(0.4);
     -moz-transform: translate3d(89px, 89px, 18px) scale(0.4);
     -ms-transform: translate3d(89px, 89px, 18px) scale(0.4);

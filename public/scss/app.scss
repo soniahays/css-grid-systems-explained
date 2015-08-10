@@ -10,8 +10,12 @@
   margin:-65px 0 0 -200px;
 }
 
+.not-displayed {
+   display: none;
+ }
+
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 /* ==========================================================================
@@ -22,10 +26,31 @@ $icon-height: 80px;
 $icon-boldness: 10px;
 $button-big-size: 269px;
 
+/* Palette
+   ======================================= */
+/**
+* generated with https://www.materialpalette.com/
+* TEAL + ORANGE.
+**/
+
+//TODO update colors project wide and adjust if necessary.
+$primary-color: #009688;
+$dark-primary-color: #00796B;
+$light-primary-color: #B2DFDB;
+
+$accent-color: #FF9800;
+
+$primary-text: #212121;
+$secondary-text: #727272;
+
+$text-icons: #FFFFFF;
+
+$divider-color: #B6B6B6;
+
 /* Fonts
    ======================================= */
 $base-font-size: 18px;
-$base-font-family: 'Roboto', sans-serif;
+$base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 /* ==========================================================================
    Load partial stylesheets

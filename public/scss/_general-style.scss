@@ -7,7 +7,7 @@
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
-  background-color: #00a896;
+  margin: 0;
 }
 
 p {
@@ -15,6 +15,35 @@ p {
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Structure
+   ========================================================================== */
+header {
+  padding-top: 85px;
+  padding-bottom: 55px;
+  background-color: $primary-color;
+
+  min-height: 280px;
+
+  .site-branding{
+    width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h1 {
+    color: $text-icons;
+    font-weight: 300;
+    font-size: 4em;
+    line-height: 20px;
+  }
+
+  h5 {
+    color: $light-primary-color;
+    font-size: 1.5em;
+  }
+}
+
 
 /* Panels
    ========================================================================== */
@@ -80,7 +109,7 @@ $button-big-size: 269px;
 }
 
 /* Next */
-.next {
+#next {
   -webkit-transform: translate3d(89px, 89px, 12px) scale(.4);
 
   //refactor

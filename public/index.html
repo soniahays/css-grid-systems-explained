@@ -13,8 +13,17 @@
 </head>
 <body>
 <!--When we combine all the concepts and CSS, we can write HTML layout scaffolding like so:-->
+    <!--<nav>-->
+
+    <!--</nav>-->
+    <!--<header>-->
+        <!--<div class="site-branding">-->
+            <!--<h1>CSS grids made simple</h1>-->
+            <!--<h5>An animated overview of CSS grids layouts</h5>-->
+        <!--</div>-->
+    <!--</header>-->
     <div class="container">
-        <div class="row intro-grid hidden">
+        <div class="row intro-grid not-displayed">
             <!--Grid systems include two key components: rows-->
             <div class="row">
                 <div class="column column-12 card-panel" style="min-height: 415px;">
@@ -73,11 +82,19 @@
                         <span class="third"></span>
                     </div>
                 </div>
-                <div class="card-panel hidden">
+                <div id="intro-text" class="card-panel not-displayed">
                     <p>
                         A grid system is a structure that allows for content
                         to be stacked both vertically and horizontally in a consistent and
                         easily manageable fashion.
+                    </p>
+                </div>
+                <div id="key-components" class="card-panel popUp not-displayed">
+                    <p>
+                        Grid systems include two key components: rows and columns. Rows are used to
+                        accommodate the columns. Columns make up the final structure and contain the
+                        actual content. Some grid systems will additionally include containers,
+                        which serve as wrappers for the layout.
                     </p>
                 </div>
             </div>

@@ -4,29 +4,43 @@ $(document).ready(function() {
     $('.intro').click(function(event){
         event.preventDefault();
         $('.plus').removeClass('plus').addClass('arrow');
-        $('.intro').removeClass('intro').addClass('next');
-        $('.card-panel.hidden').removeClass('hidden');
-        $('.intro-grid.hidden').removeClass('hidden');
+        $('.intro').removeClass('intro').attr('id', 'next');
+        $('#intro-text.not-displayed').removeClass('not-displayed');
+        $('.intro-grid.not-displayed').removeClass('not-displayed');
+
+        $('#next').click(function(event){
+            event.preventDefault();
+            console.log('next was clicked');
+            $('#intro-text').addClass('not-displayed');
+            $('.column').addClass('hidden');
+            $('#key-components').removeClass('not-displayed');
+        });
     });
 });
 
-/**
- *
- */
-(function($) {
-    var speed = 2000;
-    var container =  $('.display-animation');
-    container.each(function() {
-        var elements = $(this).children();
-        elements.each(function() {
-            var elementOffset = $(this).offset();
-            var offset = elementOffset.left*0.8 + elementOffset.top;
-            var delay = parseFloat(offset/speed).toFixed(2);
-            $(this)
-                .css("-webkit-animation-delay", delay+'s')
-                .css("-o-animation-delay", delay+'s')
-                .css("animation-delay", delay+'s')
-                .addClass('animated');
-        });
-    });
-})(jQuery);
+
+//Grid systems include two key components: rows and columns. Rows are used to
+//accommodate the columns. Columns make up the final structure and contain the
+//actual content. Some grid systems will additionally include containers,
+//which serve as wrappers for the layout.
+
+///**
+// *
+// */
+//(function($) {
+//    var speed = 2000;
+//    var container =  $('.display-animation');
+//    container.each(function() {
+//        var elements = $(this).children();
+//        elements.each(function() {
+//            var elementOffset = $(this).offset();
+//            var offset = elementOffset.left*0.8 + elementOffset.top;
+//            var delay = parseFloat(offset/speed).toFixed(2);
+//            $(this)
+//                .css("-webkit-animation-delay", delay+'s')
+//                .css("-o-animation-delay", delay+'s')
+//                .css("animation-delay", delay+'s')
+//                .addClass('animated');
+//        });
+//    });
+//})(jQuery);
