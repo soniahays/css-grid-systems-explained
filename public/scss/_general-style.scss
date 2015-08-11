@@ -16,16 +16,94 @@ p {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Reset
+   ========================================================================== */
+
+ol,
+ul {
+   padding-left: 0;
+   margin-top: 0;
+ }
+
 /* Structure
    ========================================================================== */
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 21px 20px 19px;
+  z-index: 50;
+  text-align: center;
+  background: $dark-primary-color;
+  box-shadow: 0 1px 4px #333;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    float: left;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-icons;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .navigation {
+    padding: 20px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+
+@media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.container-main {
+  margin-top: -25%;
+}
+
+
+
+
 header {
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+  background-position: center;
+  position: relative;
   padding-top: 85px;
   padding-bottom: 55px;
   background-color: $primary-color;
 
-  min-height: 280px;
+  min-height: 315px;
+  margin-top: -35px;
 
-  .site-branding{
+  .site-branding {
     width: 940px;
     margin-right: auto;
     margin-left: auto;
@@ -68,7 +146,7 @@ $button-big-size: 269px;
   height: $button-big-size;
   z-index: 1;
 
-  background-color: #fcb447;
+  background-color: $accent-color;
   //double check color borders in material design.
   border-bottom: 1px solid #c7c7c7;
   border-right: 1px solid #c7c7c7;
@@ -126,7 +204,7 @@ $button-big-size: 269px;
 
 /* Morphing icon */
 .material-icon {
-  background-color: #fcb447;
+  background-color: $accent-color;
   width: 80px;
   height: $icon-height;
   margin: calc(50% - 40px);
@@ -203,26 +281,5 @@ $button-big-size: 269px;
   .column {
     background-color: #80CBC4; //TEAL swatch 200
   }
-
-  //  pulse, zoomin, fadein entrance?
-  transform-origin: center top;
-  transform: scale3d(.8, .8, 1);
-
-  animation: pulse 500ms 1;
 }
 
-@keyframes pulse {
-  from {
-    transform: scale3d(.8, .8, 1);
-    opacity: 0;
-  }
-
-  50% {
-    transform: scale3d(.82, .82, 1.02);
-  }
-
-  100% {
-    transform: scale3d(.8, .8, 1);
-    opacity: 100;
-  }
-}

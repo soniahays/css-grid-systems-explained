@@ -38,7 +38,7 @@ $primary-color: #009688;
 $dark-primary-color: #00796B;
 $light-primary-color: #B2DFDB;
 
-$accent-color: #FF9800;
+$accent-color: #FF4081;
 
 $primary-text: #212121;
 $secondary-text: #727272;
@@ -56,8 +56,17 @@ $base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
    Load partial stylesheets
    ========================================================================== */
 
+/* Structure
+   ======================================= */
 @import 'homemade-grid';
+
+/* Animation
+   ======================================= */
 @import 'animation-entry';
+@import 'animation-exit';
+
+/* Styles
+   ======================================= */
 @import 'general-style';
 
 

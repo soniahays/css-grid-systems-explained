@@ -1,16 +1,18 @@
 //INTERACTIVELY REMOVE EACH POINT ONE AFTER THE OTHER TO
 //DEMONSTRATE VISUALLY THE EFFECT OUR OUR GRID
 $(document).ready(function() {
-    $('.intro').click(function(event){
+    $('.intro').on('click', function(event){
         event.preventDefault();
         $('.plus').removeClass('plus').addClass('arrow');
-        $('.intro').removeClass('intro').attr('id', 'next');
+        $('.intro').off().removeClass('intro').attr('id', 'next');
+//        $('header h1, header h5').addClass('bounceOutUp');
         $('#intro-text.not-displayed').removeClass('not-displayed');
-        $('.intro-grid.not-displayed').removeClass('not-displayed');
+        $('.intro-grid.not-displayed').removeClass('not-displayed').addClass('pulseIn');
+        $('.navigation').removeClass('not-displayed');
+//        $('.intro-grid.not-displayed')
 
         $('#next').click(function(event){
             event.preventDefault();
-            console.log('next was clicked');
             $('#intro-text').addClass('not-displayed');
             $('.column').addClass('hidden');
             $('#key-components').removeClass('not-displayed');

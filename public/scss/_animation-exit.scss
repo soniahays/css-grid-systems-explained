@@ -1,3 +1,4 @@
+// inspired by daneden/animate.css
 @keyframes rollOut {
   from {
     opacity: 1;
@@ -11,4 +12,24 @@
 
 .rollOut {
   animation-name: rollOut;
+}
+
+@keyframes bounceOutUp {
+  20% {
+    transform: translate3d(0, -10px, 60px);
+  }
+
+  40%, 45% {
+//    opacity: 0;
+    transform: translate3d(0, 20px, 60px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 60px);
+  }
+}
+
+.bounceOutUp {
+  animation: bounceOutUp 2s forwards;
 }
