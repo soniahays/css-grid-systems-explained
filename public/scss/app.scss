@@ -69,4 +69,9 @@ $base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
    ======================================= */
 @import 'general-style';
 
+/* Media queries
+   ======================================= */
+@import 'phone';
+@import 'tablet';
+
 

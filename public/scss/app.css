@@ -385,4 +385,24 @@ header {
 .intro-grid .column {
   background-color: #80CBC4; }
 
+/* Media queries
+   ======================================= */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+  .container-main {
+    margin-top: -85%; } }
+@media only screen and (min-device-width: 400px) and (max-device-width: 480px) {
+  .container-main {
+    margin-top: -75%; } }
+@media only screen and (min-device-width: 480px) and (max-device-width: 600px) {
+  .container-main {
+    margin-top: -55%; } }
+@media only screen and (min-device-width: 600px) and (max-device-width: 700px) {
+  .container-main {
+    margin-top: -45%; } }
+@media only screen and (min-device-width: 700px) and (max-device-width: 900px) {
+  .container-main {
+    margin-top: -35%; } }
+/* iPads (portrait and landscape) ----------- */
+
 /*# sourceMappingURL=app.css.map */

@@ -5,7 +5,7 @@ $(document).ready(function() {
         event.preventDefault();
         $('.plus').removeClass('plus').addClass('arrow');
         $('.intro').off().removeClass('intro').attr('id', 'next');
-//        $('header h1, header h5').addClass('bounceOutUp');
+        $('.branding').addClass('not-displayed');
         $('#intro-text.not-displayed').removeClass('not-displayed');
         $('.intro-grid.not-displayed').removeClass('not-displayed').addClass('pulseIn');
         $('.navigation').removeClass('not-displayed');
