@@ -9,13 +9,13 @@ $(document).ready(function() {
         $('#intro-text.not-displayed').removeClass('not-displayed');
         $('.intro-grid.not-displayed').removeClass('not-displayed').addClass('pulseIn');
         $('.navigation').removeClass('not-displayed');
-//        $('.intro-grid.not-displayed')
 
         $('#next').click(function(event){
             event.preventDefault();
             $('#intro-text').addClass('not-displayed');
             $('.column').addClass('hidden');
             $('#key-components').removeClass('not-displayed');
+            $('#next').addClass('not-displayed');
         });
     });
 });
